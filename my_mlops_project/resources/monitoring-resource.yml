@@ -39,7 +39,7 @@ resources:
       name: ${bundle.target}-my_mlops_project-monitoring-retraining-job
       tasks:
         - task_key: monitored_metric_violation_check
-          <<: *new_cluster
+     #     <<: *new_cluster
           notebook_task:
             notebook_path: ../monitoring/notebooks/MonitoredMetricViolationCheck.py
             base_parameters:
