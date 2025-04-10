@@ -5,9 +5,9 @@
 name: Bundle Deployment for my_mlops_project Staging
 
 on:
-  push:
-    branches:
-      - 'main'
+#  push:
+#    branches:
+#      - 'main'
   workflow_dispatch:
 
 defaults:
@@ -15,7 +15,7 @@ defaults:
     working-directory: ./my_mlops_project
 
 env:
-  DATABRICKS_TOKEN: ${{ secrets.STAGING_WORKSPACE_TOKEN }}
+  DATABRICKS_TOKEN: ${{ secrets.FORD_WORKSPACE_TOKEN }}
 
 jobs:
   staging:
