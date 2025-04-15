@@ -1,6 +1,6 @@
 # This GitHub workflow deploys Bundle resources (ML resource config and more)
-# defined under my_mlops_project/resources/*
-# and my_mlops_project/databricks.yml with prod deployment target configs,
+# defined under my_mlops_project/main/*
+# and my_mlops_project/databricks.yml with dev deployment target configs,
 # when PRs are merged into the release branch
 name: Bundle Deployment for my_mlops_project dev
 
@@ -25,6 +25,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: databricks/setup-cli@v0.236.0
+      - name: Print environment variable
+        run: echo "The value of GLOBAL_VAR is $DATABRICKS_TOKEN"
       - name: Validate Bundle For dev
         id: validate
         run: |
