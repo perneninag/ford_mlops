@@ -17,6 +17,7 @@ defaults:
 env:
   DATABRICKS_TOKEN: ${{ secrets.FORD_WORKSPACE_TOKEN }}
 
+
 jobs:
   dev:
     concurrency: my_mlops_project-dev-bundle-job
@@ -24,6 +25,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: databricks/setup-cli@v0.236.0
+      - name : echo data
+        run: echo "$DATABRICKS_TOKEN"
       - name: Validate Bundle For dev
         id: validate
         run: |
