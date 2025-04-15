@@ -15,6 +15,7 @@ defaults:
     working-directory: ./my_mlops_project
 
 env:
+  DATABRICKS_HOST: https://dbc-325dd65c-6716.cloud.databricks.com
   DATABRICKS_TOKEN: ${{ secrets.FORD_WORKSPACE_TOKEN }}
 
 jobs:
