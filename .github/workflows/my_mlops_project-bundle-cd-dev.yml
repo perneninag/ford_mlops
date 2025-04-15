@@ -2,12 +2,12 @@
 # defined under my_mlops_project/resources/*
 # and my_mlops_project/databricks.yml with prod deployment target configs,
 # when PRs are merged into the release branch
-name: Bundle Deployment for my_mlops_project Prod
+name: Bundle Deployment for my_mlops_project dev
 
 on:
 #  push:
 #    branches:
-#      - 'release'
+#      - 'main'
   workflow_dispatch:
 
 defaults:
@@ -19,16 +19,16 @@ env:
 
 jobs:
   prod:
-    concurrency: my_mlops_project-prod-bundle-job
+    concurrency: my_mlops_project-dev-bundle-job
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: databricks/setup-cli@v0.236.0
-      - name: Validate Bundle For Prod
+      - name: Validate Bundle For dev
         id: validate
         run: |
-          databricks bundle validate -t prod
-      - name: Deploy Bundle to Prod
+          databricks bundle validate -t dev
+      - name: Deploy Bundle to dev
         id: deploy
         run: |
-          databricks bundle deploy -t prod
+          databricks bundle deploy -t dev

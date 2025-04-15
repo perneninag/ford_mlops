@@ -32,25 +32,25 @@ targets:
     mode: development
     default: true
     variables:
-      catalog_name: dev
+      catalog_name: dev_uc1
     workspace:
       # TODO: add dev workspace URL
       host:
 
   staging:
     variables:
-      catalog_name: staging
+      catalog_name: staging_uc1
     workspace:
-      host: https://dbc-c5a590ce-ba8d.cloud.databricks.com
+      host: https://dbc-325dd65c-6716.cloud.databricks.com
 
   prod:
     variables:
-      catalog_name: prod
+      catalog_name: prod_uc1
     workspace:
-      host: https://your-prod-workspace.cloud.databricks.com
+      host: https://dbc-325dd65c-6716.cloud.databricks.com
 
   test:
     variables:
-      catalog_name: test
+      catalog_name: test_uc1
     workspace:
-      host: https://dbc-c5a590ce-ba8d.cloud.databricks.com
+      host: https://dbc-325dd65c-6716.cloud.databricks.com
